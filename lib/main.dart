@@ -13,27 +13,23 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home : Scaffold(
         appBar: AppBar(
-          title: Text('앱임')
+          leading : Icon(Icons.star),
+          title: Text(//상단 바 이름 설정.
+            '앱임',
+            style: TextStyle(
+              fontWeight: FontWeight.bold
+              ),
+              textAlign : TextAlign.center
+          ),
+          actions : [Icon(Icons.backspace_rounded)] // 위 오른쪽설정.
         ),
-        body: Column(
-          children: const [
-            Text('안녕')            
+        body: Row(
+          children: [
+            Text('안녕',
+             style: TextStyle( color : Colors.red) ),
+            ElevatedButton(onPressed: (){}, child: Text('버튼'))
           ],
-        ),
-        bottomNavigationBar: BottomAppBar(
-          
-          child : SizedBox(
-            height : 70,
-            child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Icon(Icons.phone),
-              Icon(Icons.message),
-              Icon(Icons.contact_page)
-            ],        
-        ),
-          )
-        ) 
+        )
       )
     );
   }
